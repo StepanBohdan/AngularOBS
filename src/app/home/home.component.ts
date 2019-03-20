@@ -32,7 +32,7 @@ export class HomeComponent implements OnInit, OnDestroy {
         observer.complete();
        }, 5000);
       setTimeout(() => {
-        observer.next('first package');
+        observer.next('third package');
       }, 6000);
     });
 
@@ -44,6 +44,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-
+    this.numbersObsSubscription.unsubscribe();
+    this.customObsSubscription.unsubscribe();
   }
 }
